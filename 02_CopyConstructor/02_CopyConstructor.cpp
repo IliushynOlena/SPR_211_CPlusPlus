@@ -72,22 +72,23 @@ public:
 		cout << endl;
 	}
 
-	void AddMark(int value)
-	{
-		int* new_arr = new int[marksCount + 1];
-		for (size_t i = 0; i < marksCount; ++i)
-		{
-			new_arr[i] = marks[i];
-		}
-		new_arr[marksCount] = value;
-		if (marks != nullptr)
-			delete[] marks;
-		marks = new_arr;
-
-		++marksCount;
-	}
-
+	void AddMark(int value);
 };
+
+void Student::AddMark(int value)
+{
+	int* new_arr = new int[marksCount + 1];
+	for (size_t i = 0; i < marksCount; ++i)
+	{
+		new_arr[i] = marks[i];
+	}
+	new_arr[marksCount] = value;
+	if (marks != nullptr)
+		delete[] marks;
+	marks = new_arr;
+
+	++marksCount;
+}
 
 int main()
 {
