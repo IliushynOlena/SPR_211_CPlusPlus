@@ -8,6 +8,12 @@ struct Vagon
 	int number = 0;
 	int plases = 0;
 	int pass = 0;
+	void Show()
+	{
+		cout << "Number: " << number << "\t";
+		cout << "Plases: " << plases << "\t";
+		cout << "Pass: " << pass << endl;
+	}
 };
 
 class Train
@@ -60,9 +66,7 @@ public:
 		cout << "Vagons: " << countVagons << endl;
 		for (int i = 0; i < countVagons; i++)
 		{
-			cout << "Number: " << vagons[i].number << "\t";
-			cout << "Plases: " << vagons[i].plases << "\t";
-			cout << "Pass: " << vagons[i].pass << endl;
+			vagons[i].Show();
 		}
 		cout << endl;
 	}
@@ -119,6 +123,13 @@ public:
 		}
 		cout << "Vagon not fined(" << endl;
 	}
+	void operator++()
+	{
+		for (int i = 0; i < countVagons; i++)
+		{
+			vagons[i].pass++;
+		}
+	}
 	Train operator+(const Train& other)
 	{
 		Train result(*this);
@@ -130,6 +141,56 @@ public:
 		return result;
 	}
 
+	Vagon GetVagon(int index)//20
+	{
+		if (index < 0 || index >= countVagons) return Vagon();
+		return vagons[index];
+	}
+	Vagon operator[](int index)//20
+	{
+		if (index < 0 || index >= countVagons) return Vagon();
+		return vagons[index];
+	}
+	void ChangePassangers(int count)
+	{
+		for (int i = 0; i < countVagons; i++)
+		{
+			vagons[i].pass += count;
+		}
+	}
+	void operator()(int count)
+	{
+		for (int i = 0; i < countVagons; i++)
+		{
+			vagons[i].pass += count;
+		}
+	}
+	void operator()(int count, int numberVagon)
+	{
+
+		for (int i = 0; i < countVagons; i++)
+		{
+			if (vagons[i].number == numberVagon)
+			{
+				vagons[i].pass += count;
+			}
+		}
+	}
+	operator string ()
+	{
+		//string res = "";
+		//for (int i = 0; i < countVagons; i++)
+		//{
+		//	//"" + "1" + " " + "2" + " ";
+		//	res += to_string(vagons[i].number) + " ";//1 2 3 1 2 3 
+		//}
+		//return res;
+		return model;
+	}
+	string ConvertToString ()
+	{		
+		return model;
+	}
 };
 
 
@@ -150,6 +211,29 @@ int main()
 	cout << "----------------------------" << endl;
 	Train superTrain = tr1 + tr2;
 	superTrain.Show();
+	cout << "----------------------------" << endl;
+	++superTrain;
+	superTrain.Show();
+
+	cout << "_________________________________" << endl;
+	Vagon v = superTrain.GetVagon(2);
+	v.Show();
+
+	v = superTrain[1];
+	v.Show();
+	cout << "_________________________________" << endl;
+	superTrain.ChangePassangers(5);
+	superTrain.Show();
+
+	superTrain(10);
+	superTrain.Show();
+
+	superTrain(5, 1);
+	superTrain.Show();
+
+	cout << (string)superTrain << endl;
+
+	//iostream
 
 
 
