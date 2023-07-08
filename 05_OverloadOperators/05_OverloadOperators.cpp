@@ -74,8 +74,8 @@ public:
     }
     Point operator =(const Point& other)
     {
-        this->x = other.x;
-        this->y = other.y;
+        this->x = other.x;//8     8
+        this->y = other.y;//4     4
         return *this;
     }
   
