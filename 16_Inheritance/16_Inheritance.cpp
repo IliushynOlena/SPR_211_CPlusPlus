@@ -80,11 +80,15 @@ public:
 
 int main()
 {
+
+    Enemy e;
+    
     Monster monster("Monya", 2, 150);
     monster.Run();
     monster.Print();
 
     Dragon boss("Vasia",10,2);
+    
     Dragon dragon("Valera",6,1);
 
     int i = 1;
