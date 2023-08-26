@@ -8,7 +8,7 @@ struct Point
     int y;
 
 };
-class Student
+class Person
 {
 private:
 	string name;//Viktor
@@ -21,7 +21,7 @@ public:
 	// Використовується для ініціалізації полів
 
 	// Конструктора за замовчуванням (default ctor) - без параметрів
-	Student()
+	Person()
 	{
 		name = "";
 		age = 0;
@@ -30,7 +30,7 @@ public:
 	}
 
 	// Параметризований конструктор - який приймає якісь параметри
-	Student(string name, int age)
+	Person(string name, int age)
 	{
 		this->name = name;
 		this->age = age;
@@ -41,7 +41,7 @@ public:
 	}
 	// Деструктор - метод, який викликається автоматично при видаленні об'єкта класу
 	// Використовується для очищення пам'яті, звільнення ресурсів і тд.
-	Student(const Student& other)
+	Person(const Person& other)
 	{
 		this->name = other.name;
 		this->age = other.age;
@@ -52,7 +52,7 @@ public:
 		}
 		this->marksCount = other.marksCount;//4
 	}
-	~Student()
+	~Person()
 	{
 		if (marks != nullptr)
 			delete[] marks;
@@ -75,7 +75,7 @@ public:
 	void AddMark(int value);
 };
 
-void Student::AddMark(int value)
+void Person::AddMark(int value)
 {
 	int* new_arr = new int[marksCount + 1];
 	for (size_t i = 0; i < marksCount; ++i)
@@ -93,8 +93,8 @@ void Student::AddMark(int value)
 int main()
 {
 
-	Student testSt;					// виклик конструктора за замовчуванням
-	Student st("Viktor", 15);	// виклик параметризованого конструктора
+	Person testSt;					// виклик конструктора за замовчуванням
+	Person st("Viktor", 15);	// виклик параметризованого конструктора
 
 	st.AddMark(8);
 	st.AddMark(7);
@@ -105,7 +105,7 @@ int main()
 	st.Print();
 	cout << "-------------------------" << endl;
 	//Student copy = Student(st);
-	Student copy(st);
+	Person copy(st);
 	copy.Print();
     /*
     int a;//4b

@@ -85,8 +85,7 @@ public:
 void TestDrive(Car& car)
 {
     car.SetSpeed(60);
-    car.Drive();
-    
+    car.Drive();    
 }
 
 

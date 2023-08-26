@@ -92,6 +92,7 @@ void RollCall(Animal& animal)
 
 int main()
 {
+	
 	Frog frog("Crazy frog", "Boloto", 0.3, 0.5);
 	frog.MakeSound();
 	Duck duck("Scruzh Mack Duck","Lake",2.7, 6500);
