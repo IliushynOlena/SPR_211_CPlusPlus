@@ -141,7 +141,7 @@ public:
 		return result;
 	}
 
-	Vagon GetVagon(int index)//20
+	Vagon GetVagon(int index)//20  -100
 	{
 		if (index < 0 || index >= countVagons) return Vagon();
 		return vagons[index];
