@@ -43,8 +43,11 @@ public:
         //this->age = age;
         this->weight = weight;
     }
-    void Print()
+   
+    void Print()const
     {
+        cout<< this->age;
+        //this->age = 10;
         cout << "Name : " << name << endl;
         cout << "Age : " << age << endl;
         cout << "Weight : " << weight << endl;
@@ -52,6 +55,7 @@ public:
     }
     ~Human()
     {
+     
         countHuman--;
     }
 };

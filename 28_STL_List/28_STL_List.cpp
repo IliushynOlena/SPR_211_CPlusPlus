@@ -42,7 +42,7 @@ bool CompareBookByPages(const Book& b1, const Book& b2)
 
 int main()
 {
-	list<Book> library;
+	/*list<Book> library;
 	library.assign({
 		Book{"Night", "Gogol", 786},
 		Book{"Maria", "Kotliarevsruy", 400},
@@ -72,10 +72,10 @@ int main()
 	for (Book b : library)
 	{
 		cout << setw(15) << left << b.name << setw(15) << b.author << setw(7) << b.pages << endl;
-	}
+	}*/
 
 	
-	/*
+	
 
 	list<int> list1, list2;// head = nullptr;tail = nullptr;
 	cout << "Size 1 : " << list1.size() << endl;
@@ -89,7 +89,18 @@ int main()
 	ShowList(list1, list2);
 	cout << "Size 1 : " << list1.size() << endl;
 	cout << "Size 2 : " << list2.size() << endl;
-
+	list<int>::iterator it = list1.begin();
+	it++;
+	it++;
+	it++;
+	
+	list1.insert(it, 15);
+	ShowList(list1, list2);
+	/*for (int i = 0; i < list1.size(); i++)
+	{
+		cout << list1[i] << " ";
+	}*/
+	/*
 	list1.assign({ 10,20,30 });
 	int& a = ++(list1.front());
 	a++;

@@ -63,7 +63,11 @@ int main()
 {
 	// встановлення функції, яка буде викликатися при необробленому exception
 	//set_terminate(MyQuit);
-
+	int a = 5;
+	int b;
+	b = 11;
+	int c{ 5 };
+	int d(6);
 
 	MyArr myArr(5);
 	

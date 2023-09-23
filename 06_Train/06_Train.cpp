@@ -70,7 +70,10 @@ public:
 		}
 		cout << endl;
 	}
-
+	//c-tor{}
+	//c-tor copy{}
+	// //operator ={}
+	//destructor{}
 
 	void AddVagon(int number, int plases = 0, int pass = 0)
 	{
